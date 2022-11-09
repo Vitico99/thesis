@@ -1,1 +1,117 @@
 \chapter{Detalles de Implementación y Experimentos}\label{chapter:implementation}
+
+
+\section{Herramientas y tecnolog\'ias utilizadas}
+
+\subsection{Lenguaje de programaci\'on Python}
+
+Python es un lenguaje de programaci\'on de alto nivel y de prop\'osito
+general. Es interpretado, multi-paradigma, de tipado din\'amico y memoria
+auto-manejada. Fue desarrollado por Guido Van Rossum en 1991 y la \'ultima
+versi\'on al momento de realizarse este trabajo es la (incluirversion).
+La mayor\'ia de las implementaciones incluyen un bucle \textit{Lectura-Evaluaci\'on-Impresi\'on}
+(REPL por sus siglas en ingl\'es) funcionando como un int\'erprete de l\'ineas
+de comandos, donde el usuario introduce las sentencias secuencialmente y recibe
+inmediatamente los resultados.
+
+En octubre de 2021 alcanz\'o el primer puesto en la lista de los lenguajes
+de programaci\'on m\'as populares seg\'un el \'indice de la comunidad de
+programaci\'on TIOBE 2021. Es utilizado por grandes organizaciones como
+Google [PSF2021b], Yahoo[PSF2020], la NASA[PSF2021c], el CERN [CERN 2014],
+Wikipedia, Amazon, Facebook, Instagram, Spotify, entre otros.
+
+Es muy usado para el an\'alisis e ingenier\'ia de datos, aprendizaje
+por computadoras e inteligencia artificial gracias a diversas bibliotecas
+como NumPy, SciPy, Pandas, Matplotlib, Tensorflow, Keras, Pytorch, OpenCV y Networkx.
+Para desarrollo web cuenta con marcos de trabajo como FastAPI, Flask y Django.
+Adem\'as, se emplea en otros campos como la rob\'otica, el internet de las
+cosas y la educaci\'on.
+Para este trabajo se utiliz\'o la versi\'on 3.7 para lograr una retro-compatibilidad
+alta.
+
+
+\subsection{Pandas}
+Pandas es una biblioteca de c\'odigo abierto del lenguaje Python orientada
+a la manipulaci\'on y an\'alisis de datos. Su implmentaci\'on es
+r\'apida, poderosa y f\'acil de usar lo que la ha convertido en
+una herramienta muy popular entre los analistas de datos en dominios 
+acad\'emicos y comerciales \cite{pandas2022}.
+Esta biblioteca provee objetos para la manipulaci\'on r\'apida
+y eficiente de conjuntos de datos, es compatible con m\'ultiples formatos
+de almacenamiento de datos e implementa operaciones optimizadas para
+modificar conjuntos de datos.
+
+En este modelo Pandas es utilizada para realizar inferencia de tipos
+sobre los atributos de los conjuntos de datos y fue fundamental para
+la creaci\'on de los conjuntos de entrenamiento del modelo.
+
+\subsection{Numpy}
+Numpy es una biblioteca de c\'odigo abierto para el lenguaje de
+programaci\'on Python que permite crear vectores y matrices de gran
+tama\~no y de muchas dimensiones. Adem\'as, incluye
+funciones para operar con sus matrices y vectores de una forma
+c\'omoda, siendo comparable a Matlab en ese sentido. Internamente
+utiliza el lenguaje C para la implementaci\'on de las funciones, por
+lo que brinda un alto rendimiento \cite{harris2020array}.
+
+Este trabajo utiliza las implementaciones eficiente de arreglos y m\'etodos estad\'isticos
+de esta biblioteca dentro del proceso de extracci\'on de vectores de caracter\'isticas.
+
+\subsection{SciPy}
+SciPy es una biblioteca de c\'odigo abierto para el lenguaje de
+programaci\'on Python la cual est\'a enfocada en proveer algoritmos
+para problemas de optimizaci\'on, integraci\'on, interpolaci\'on,
+c\'alculo de valores propios, ecuaciones algebraicas, ecuaciones diferenciales,
+estad\'isticas entre otros. Gracias a la utilizaci\'on de estructuras
+especializadas para el c\'omputo sobre arreglos y sus implementaciones
+altamente eficientes escritas en lenguajes de bajo nivel como Fortran, C y C++
+permite resolver problemas complejos en utilizando una sintaxis de alto nivel a la
+vez que r\'apida y eficiente \cite{2020SciPy-NMeth}.
+
+SciPy es utilizada dentro del modelo durante la extracci\'on de vectores
+de caracter\'isticas para realizar el c\'omputo de m\'etricas estad\'isticas complejas.
+
+\subsection{Scikit-Learn}
+Scikit-Learn es una biblioteca de aprendizaje de m\'aquinas de c\'odigo abierto para el
+lenguaje de programaci\'on Python. Presenta una gran colecci\'on de modelos
+para la resoluci\'on de problemas enmarcados dentro del paradigma de aprendizaje de m\'aquinas.
+En la actualidad incluye modelos para problemas de clasificaci\'on, regresi\'on, 
+clusterizaci\'on, reducci\'on de dimensionalidad y optimizaci\'on de modelos \cite{scikit-learn}.
+
+Varios modelos utilizados como punto de referencia para comparar los resultados
+de los experimentos realizados han sido provistos por esta biblioteca, adem\'as se han
+empleado sus m\'etodos de preprocesamiento para la preparaci\'on del corpus.
+
+\subsection{Tensorflow y Keras}
+Tensorflow es una plataforma de c\'odigo abierto desarrollada por Google para
+aprendizaje por computadoras de extremo a extremo. Proporciona interfaces para
+C++, Haskell, Java, Go, Rust y Python de forma oficial, adem\'as de interfaces de
+terceros para C\#, Julia, R y Scala. Su implementaci\'on permite ejecutarse
+eficientemente tanto sobre CPU como GPU y TPU \cite{tensorflow2015-whitepaper}.
+
+Keras es una interfaz de alto nivel de Tensorflow que permite resolver problemas
+de aprendizaje autom\'atico con un enfoque en el aprendizaje profundo de una forma
+accesible y altamente productiva \cite{chollet2015keras}.
+
+Tensoflow y Keras fueron utilizados para la implementaci\'on y entrenamiento 
+del modelo de clasificaci\'on de nodos y en el modelo de clasificaci\'on utilizado
+como punto de referencia.
+
+\subsection{Google Colaboratory}
+Es un servicio gratuito de Google que permite escribir y ejecutar
+c\'odigo arbitrario de Python sobre recursos computacionales como GPU y TPU en
+el navegador. Esta plataforma ofrece un entorno de trabajo de Python con buenos recursos computacionales,
+bibliotecas y herramientas de aprendizaje autom\'atico pre-instaladas de forma
+gratuita (tambi\'en se ofrece la posibilidad de aumentar los recursos computaciones del entorno mediante una suscripci\'on de pago).
+Basada en Jupyter Notebook brinda en su plan gratuito 13 GB de RAM, 110GB de almacenamiento (extensible mediante la utilizaci\'on de Google Drive) y
+la posibilidad de utilizar tanto CPU como GPU y TPU \cite{google2014colab}.
+
+Este servicio fue utilizado para la creaci\'on del corpus, entrenamiento y evaluaci\'on
+del modelo.
+
+
+
+
+
+
+
