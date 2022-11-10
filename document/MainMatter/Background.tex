@@ -1,80 +1,21 @@
-% \chapter{Marco Te\'orico}
-
-% \section{Modelo relacional}
-
-% \begin{definition}
-%     Una \textbf{relaci\'on} $R$ sobre un conjunto de dominios $D_1, D_2, ..., D_n$,
-%     (no necesariamente todos distintos) se compone de dos partes:
-%     una cabecera y un cuerpo, donde:
-%     \begin{itemize}
-%         \item La \textbf{cabecera} est\'a formada por un conjunto finito de
-%         pares atributo-dominio $\{(A_1, D_1), (A_2, D_2), ..., (A_n, D_n)\}$,
-%         tal que a cada atributo $A_j$ corresponde a uno y solo uno de los dominios
-%         subyacentes $D_j, (j=1,2,...,n)$.
-%         \item El \textbf{cuerpo} est\'a formado por un conjunto finito de tuplas, el cual
-%         var\'ia en el tiempo. Cada tupla, a su vez, est\'a formada por un conjunto
-%         de pares atributo-valor, $\{(A_1, V_{i1}), (A_2, V_{i2}), ..., (A_n, V_{in}) \}, (i = 1,2,...,m)$
-%         tal que $m$ es el n\'umero de tuplas en el conjunto tal que, para cada
-%         par $(A_j, V_{ij}),\; V_{ij}$ es un valor del dominio $D_j$ asociado al atributo
-%         $A_j, (j=1,2,...,n)$ 
-%     \end{itemize}
-% \end{definition}
-
-% \section{Teor\'ia de Grafos}
-
-% Los grafos son estructuras de datos utilizadas extensivamente
-% dentro de la Ciencia de la Computaci\'on. Debido a su capacidad
-% para representar la existencia de relaciones entre elementos han sido empleados para
-% modelar fen\'omenos tan diversos como las redes sociales, estructuras moleculares,
-% interacciones biol\'ogicas entre prote\'inas, preferencias de usuarios, entre muchos otros.
-
-% \subsection{Tipos de Grafos}
-
-
-% \subsection{Graph Embedding}
-
-% \begin{definition}
-%     Dado un grafo $G = (V,E)$ una \textbf{medida de similaridad} sobre el
-%     conjunto de v\'ertices $V$ es una funci\'on $f : V \times V \to \mathbb{R}$ 
-%     la cual indica la similaridad entre dos v\'ertices del grafo.
-% \end{definition}
-
-% \begin{definition}
-%     El \textbf{problema de graph embedding} consiste en dado un grafo
-%     $G = (V,E)$ y un entero $k$, tal que $k \ll |V|$, representar el
-%     grafo $G$ en un espacio $k$-dimensional en el cual se deben de preservar
-%     las propiedades de dicho grafo. Estas propiedades pueden ser
-%     especificadas mediante la definici\'on de medidas de similaridad.
-% \end{definition}
-
-% En \textit{graph embedding} un grafo puede ser representado como un
-% vector de $k$ dimensiones o como un conjunto de vectores de $k$ dimensiones
-% los cuales representan alg\'un componente del grafo (v\'ertices, aristas o subestructuras).
-% % \begin{definition}
-% %     Sea un grafo $G = (V,E)$ la \textbf{proximidad de primer orden} $s_{ij}^{(1)}$ entre los v\'ertices $v_i$ y $v_j$
-% %     es el peso de la arista $e_{ij}$. Se denota $s_i^{(1)} = [s_{i1}^{(1)}, s_{i2}^{(1)},..., s_{i|V|}^{(1)} ]$ a la proximidad
-% %     del v\'ertice $v_i$ con el resto del grafo.
-% % \end{definition}
-
-% % \begin{definition}
-% %     Sea un grafo $G = (V,E)$ la \textbf{proximidad de segundo orden} $s_{ij}^{(2)}$ entre los v\'ertices $v_i$ 
-% % \end{definition}
-
-% \subsection{Graph Embeddings}
-
-% \begin{definition}
-    
-% \end{definition}
-
-
-
-
-
-
-
 \chapter{Estado del Arte}\label{chapter:state-of-the-art}
 
-\section{Lenguajes de Visualizaci\'on de Datos}
+La necesidad de extraer conocimiento a partir de conjuntos de datos
+de tama\~no y dimensi\'on cada vez mayores, unido a la complejidad del
+proceso de an\'alisis de datos conducen a la necesidad de crear herramientas
+de \textit{software} que ayuden a los analistas durante este proceso.
+Una de las herramientas propuestas han sido los sistemas de recomendaci\'on de visualizaciones \cite{vartak2017towards}, 
+estos sistemas tienen como objetivo descubrir informaci\'on relevante y presentarla visualmente
+al usuario de forma autom\'atica. Debido a su complejidad existen l\'ineas de investigaci\'on
+enfocadas a subproblemas de la recomendaci\'on de visualizaciones, siendo uno de ellos
+la recomendaci\'on de configuraciones gr\'aficas.
+
+En este cap\'itulo se realiza una exposici\'on de los m\'etodos computacionales para la representaci\'on 
+de visualizaciones y se analizan las propuestas de diferentes sistemas orientados a la
+recomendaci\'on de configuraciones visuales.
+
+
+\section{Lenguajes de visualizaci\'on de datos}
 Los lenguajes de visualizaci\'on de datos son utilizados para especificar
 relaciones entre los datos a visualizar y los componentes gr\'aficos.
 
@@ -90,7 +31,7 @@ por algoritmos basados en inteligencia artificial permitiendo definir espacios d
 visualizaciones \cite{godfrey2016interactive}.
 
 
-\subsection{Lenguajes de Visualizaci\'on de Datos de Bajo Nivel}
+\subsection{Lenguajes de visualizaci\'on de datos de bajo nivel}
 Los lenguajes de bajo nivel son aquellos en los que el usuario debe de especificar c\'omo asociar los
 datos a cada componentes gr\'afico utilizado, permitiendo un alto nivel de personalizaci\'on y detalle en
 las visualizaciones resultantes.
@@ -112,7 +53,7 @@ Vega \cite{vegaLang} y ReactiveVega \cite{satyanarayan2015reactive} los cuales p
 un paradigma declarativo sin estar contenidos dentro de otro lenguaje y han sido utilizados por varias plataformas de
 visualizaci\'on.
 
-\subsection{Lenguajes de Visualizaci\'on de Datos de Alto Nivel}
+\subsection{Lenguajes de visualizaci\'on de datos de alto nivel}
 Los lenguajes de alto nivel permiten abstraer al usuario de ciertos elementos dentro de la construcci\'on
 de las visualizaciones mediante la utilizaci\'on de valores por defecto y la adici\'on de restricciones a sus capacidades. Estos pueden
 estar implementados sobre lenguajes de bajo nivel y suelen ser m\'as f\'aciles de utilizar por los usuarios.
@@ -152,7 +93,7 @@ secuencial mediante instrucciones \textit{if-then-else} [\cite*{mackinlay1986aut
 % \end{figure}
 
 
-\section{Sistemas de Recomendaci\'on de Visualizaciones}
+\section{Sistemas de recomendaci\'on de configuraciones gr\'aficas}
 
 La visualizaci\'on inteligente autom\'atica de datos tiene como objetivo
 principal reducir el tiempo y esfuerzo necesitado para la exploraci\'on y
@@ -167,7 +108,13 @@ Los primeros sistemas en generar visualizaciones de forma autom\'atica aparecer\
 a partir del a\~no 1986, manteniendose un alto inter\'es en el campo con el desarrollo
 de nuevas soluciones y sistemas hasta la actualidad \cite{godfrey2016interactive}. 
 
-Generalmente estos sistemas funcionan siguiendo un mismo procedimiento de dos pasos:
+Debido a la complejidad del problema de recomendaci\'on de visualizaciones muchos
+sistemas optaron por intentar resolver un subproblema del mismo,
+asumiendo la existencia de una especificaci\'on parcial de la visualizaci\'on donde el usuario haya seleccionado
+los datos de inter\'es a visualizar. Esta versi\'on simplificada se plantea como el problema de la
+recomendaci\'on autom\'atica de configuraciones gr\'aficas \cite{qin2020making}.
+
+Generalmente los sistemas que resuelven este problema funcionan siguiendo un mismo procedimiento de dos pasos:
 \begin{enumerate}
     \item Enumerar un conjunto de visualizaciones de inter\'es a partir de un espacio de visualizaciones.
     \item Utilizar una funci\'on de \textit{ranking} para ordenar el conjunto resultante.
@@ -180,7 +127,7 @@ de numerosos trabajos acerca de pr\'acticas y heur\'isticas para dise\~no de vis
 Por otro lado los enfoques basados en aprendizaje de m\'aquinas han tomado relevancia en los \'ultimos a\~nos con la aparici\'on
 de varios prototipos \cite{zeng2021we}.
 
-\subsection{Recomendaci\'on de Visualizaciones Basada en Reglas} \label{subsection:rule-viz-rec}
+\subsection{Recomendaci\'on de configuraciones gr\'aficas basada en reglas} \label{subsection:rule-viz-rec}
 
 Los sistemas de recomendaci\'on basados en reglas se caracterizan por el establecimiento
 de condiciones bien definidas para la recomendaci\'on de visualizaciones. Estos sistemas
@@ -203,6 +150,12 @@ El sistema generaba dise\~nos de forma autom\'atica utilizando composiciones alg
 de lenguajes de visualizaci\'on primitivos, luego los dise\~nos obtenidos eran recomendados de acuerdo
 a los criterios de expresividad y efectividad.
 
+\textbf{BOZ} \cite{casner1991task} recib\'ia como entrada una descripci\'on l\'ogica de
+una tarea de an\'alisis a realizar sobre el conjunto de datos, esta descripci\'on estaba
+basada en operadores l\'ogicos (representan operaciones sobre los datos) los cuales eran
+sustuidos por operadores perceptuales (representan el uso de componentes gr\'aficos) mediante
+el cumplimiento de reglas \textit{if-then-else}.
+
 
 \textbf{SAGE} \cite{roth1994interactive} extendi\'o la soluci\'on propuesta por APT al permitir
 la especificaci\'on total o parcial de las visualizaciones por los usuarios. Estas especificaciones
@@ -211,6 +164,15 @@ analizado por el algoritmo que construye y compara las visualizaciones. El siste
 visualizaciones a partir de especificaciones sobre la informaci\'on relevante a mostrar o sobre
 elementos de dise\~no gr\'afico.
 
+\textbf{ShowMe} \cite{mackinlay2007show} es un sistema basado en APT. Este
+trabajo introdujo el lenguaje de visualizaci\'on de datos de alto nivel llamado VizQL \cite{hanrahan2006vizql} el cual permite
+especificar de forma algebraica la estructura de los gr\'aficos y los datos utilizados para generarlo.
+Este sistema est\'a enfocado en la presentaci\'on visual y la experiencia de usuario por lo que las reglas y heur\'isticas implementadas
+est\'an altamente influenciadas por los trabajos sobre dise\~no de visualizaciones y las m\'etricas utilizadas tienen como objetivo la expresividad de las visualizaciones. 
+
+Por otro lado \textbf{Voyager} \cite{wongsuphasawat2015voyager} se enfoca en recomendar visualizaciones que muestren transformaciones 
+sobre los datos seleccionados mediante
+la utilizaci\'on de m\'etricas. Las configuraciones visuales son seleccionadas mediante la aplicaci\'on de reglas y heur\'isticas basadas en la literatura. 
 
 \textbf{Draco} \cite{saket2018beyond} est\'a enfocado en el paradigma de la programaci\'on
 basada en restricciones dentro de la programaci\'on declarativa. Un programa de restricciones 
@@ -222,6 +184,11 @@ valores de las variables y modelan la informaci\'on parcial sobre dichas inc\'og
 computadas como las de un problema de optimizaci\'on combinatoria sujeto a restricciones. Draco implementa
 esta idea mediante una representaci\'on l\'ogica del lenguaje de visualizaci\'on Vega-Lite sobre la
 cual un conjunto de expertos definen las restricciones y los pesos en caso de ser restricciones suaves.
+
+\textbf{Learning Engine Through Ontologies} (LETO) \cite{estevez2019demo}, un marco de trabajo para el descubrimiento
+de conocimiento mediante la creaci\'on y composici\'on de ontolog\'ias 
+representadas utilizando grafos de conocimientos. Para la generaci\'on de configuraciones
+se utiliz\'o un enfoque basado en reglas establecidas por los autores del sistema.
 
 Los sistemas basados en m\'etricas se enfocan en utilizar medidas que caractericen la cantidad
 de informaci\'on que transmite la visualizaci\'on. Estas m\'etricas provienen de distintas ramas
@@ -236,7 +203,6 @@ de la distribuci\'on de los datos mientras los gr\'aficos de puntos utilizaban l
 \textbf{SeeDB} \cite{vartak2014seedb} es un sistema el cual intenta maximizar el inter\'es del usario
 al utilizar como referencia visualizaciones generadas o seleccionadas por el usuario
 para recomendar aquellas visualizaciones que maximicen la desviaci\'on con los datos de la muestra.
-
 
 \textbf{Foresight} \cite{demiralp2017foresight} realiza una clasificaci\'on de los tipos de gr\'aficos de
 acuerdo al tipo de informaci\'on que pueden transmitir de acuerdo a consideraciones de dise\~no extra\'idas
@@ -257,10 +223,10 @@ a la dificultad de realizar una definici\'on l\'ogica de criterios los cuales pu
 la generaci\'on de visualizaciones mediante la composici\'on de lenguajes con el \textit{ranking} basado en m\'etricas. 
 
 \subsection{Recomendaci\'on de Visualizaciones Basada en Aprendizaje de M\'aquinas}\label{subsection:ml-viz-rec}
-En la actualidad existen gran inter\'es en este tipo de enfoque apareciendo varias implementaciones
+En la actualidad existe un gran inter\'es en este tipo de enfoque apareciendo varias implementaciones
 de estos sistemas con novedosas modelaciones del problema. 
 
-\textbf{DeepEye} \cite{luo2018deepeye} divide el problema en dos subproblemas. El primer subproblema es modelado
+\textbf{DeepEye} \cite{luo2018deepeye} divide el problema en dos subproblemas de aprendizaje de m\'aquinas. El primer subproblema es modelado
 como un problema de clasificaci\'on binaria donde utilizando \'arboles de decisi\'on se aprende a etiquetar 
 como \textit{buenas} o \textit{malas} las visualizaciones generadas para un conjunto de datos. 
 El segundo subproblema consiste en un problema de \textit{Learning to Rank} (LTR) sobre el conjunto de visualizaciones. 
@@ -269,6 +235,8 @@ mediante el algoritmo RankNet \cite{luo2018deepeye}. Para realizar las recomenda
 aquellas clasificadas como \textit{buenas} por el primer modelo, finalmente este conjunto es ordenado de acuerdo a la funci\'on de \textit{ranking} aprendidad por
 el segundo modelo. 
 
+ 
+
 \textbf{Draco-Learn} \cite{moritz2018draco} es una extensi\'on de la propuesta del sistema Draco discutido en la
 secci\'on \ref{subsection:rule-viz-rec}, una de las limitaciones principales de este sistema era la necesidad
 de que expertos del dominio ajustaran los pesos de las restricciones suaves de forma manual. Este nuevo sistema
@@ -276,7 +244,7 @@ utiliza RankSVM para ajustar de forma autom\'atica los pesos de las restriccione
 generadas por expertos.
 
 
-\textbf{Data2Vis} \cite{dibia2019data2vis} transforma la recomendaci\'on de visualizaciones en un problema de
+\textbf{Data2Vis} \cite{dibia2019data2vis} model\'o la recomendaci\'on de visualizaciones como un problema de
 traducci\'on de lenguajes. Este sistema representa los datos de entrada mediante tuplas
 relacionales definidas en el lenguaje JSON y su salida es un conjunto de sentencias
 en el lenguaje de visualizaci\'on de datos Vega-Lite las cuales se corresponde con las
@@ -285,52 +253,24 @@ basados en redes neuronales recurrentes convencionales (RNN por sus siglas en in
 Este tipo de redes neuronales son capaces de capturar el contexto de las oraciones debido
 a sus estructuras de memoria y son muy utilizadas en sistemas de traducci\'on autom\'atica \cite{sutskever2014sequence}.
 
-
-Quian y col. \cite{qian2020ml} propusieron un sistema basados en redes neuronales profundas. Este trabajo modela
-la recomendaci\'on autom\'atica como un conjunto de problemas de clasificaci\'on multiclase sobre las configuraciones gr\'aficas
-presentes en un lenguaje de visualizaci\'on. Por cada
+\textbf{VizML} \cite{hu2019vizml} propuso un enfoque basado en redes neuronales profundas modelando
+el problema como una serie de problemas de clasificaci\'on para seleccionar opciones gr\'aficas. Por cada
 configuraci\'on gr\'afica construyen un modelo que clasifica dicha configuraci\'on en sus respectivas opciones, por ejemplo,
 la configuraci\'on \textit{eje} puede ser clasificada en \textit{x} o \textit{y}. De esta forma el sistema puede
-seleccionar las opciones y construir las visualizaciones.
+seleccionar las opciones y construir las visualizaciones. Adem\'as
+present\'o una nueva forma de representar conjuntos de datos mediante vectores de caracter\'isticas utilizando
+m\'etricas estad\'isticas.
 
+Quian y col. \cite{qian2020ml} desarrollaron una extensi\'on de la propuesta del sistema VizML.
+Entre sus aportes est\'an la definici\'on de un marco de trabajo para la definici\'on del problema
+de recomendaci\'on de visualizaciones como un problema de aprendizaje de m\'aquinas y la incorporaci\'on
+de informaci\'on estructural sobre el conjunto de datos en la entrada del modelo.
 
-\section{Recomendaci\'on de Configuraciones Visuales}
+\textbf{KG4Vis} \cite{li2021kg4vis} utiliz\'o
+como referencia el trabajo realizado en VizML para modelar el problema de recomendaci\'on
+mediante un grafo de conocimientos donde la selecci\'on de las configuraciones gr\'aficas se realiza
+mediante la soluci\'on de problemas de predicci\'on de aristas.
 
-Debido a la complejidad del problema de recomendaci\'on de visualizaciones muchos
-sistemas optaron por intentar resolver un subproblema del mismo,
-asumiendo la existencia de una especificaci\'on parcial de la visualizaci\'on donde el usuario haya seleccionado
-los datos de inter\'es a visualizar. Esta versi\'on simplificada se plantea como el problema de la
-recomendaci\'on autom\'atica de configuraciones gr\'aficas \cite{qin2020making}.
-
-Siendo un subproblema del problema de recomendaci\'on de visualizaciones al igual que en este las implementaciones
-de estos sistemas son basadas en reglas o basadas en aprendizaje de m\'quinas.
-
-% BOZ \cite{casner1991task} recib\'ia como entrada una descripci\'on l\'ogica de
-% una tarea de an\'alisis a realizar sobre el conjunto de datos, esta descripci\'on estaba
-% basada en operadores l\'ogicos (representan operaciones sobre los datos) los cuales eran
-% sustuidos por operadores perceptuales (representan el uso de componentes gr\'aficos) mediante
-% el cumplimiento de reglas \textit{if-then-else}.
-\subsection{Recomendaci\'on de Configuraciones Visuales Basada en Reglas}
-
-Este tipo de sistemas basados en reglas son los utilizados actualmente por varias plataformas
-de an\'alisis de datos.
-
-\textbf{ShowMe} \cite{mackinlay2007show} es un sistema basado en APT cuyo enfoque fue expuesto en la secci\'on \ref{subsection:rule-viz-rec}. Este
-trabajo introdujo el lenguaje de visualizaci\'on de datos de alto nivel llamado VizQL \cite{hanrahan2006vizql} el cual permite
-especificar de forma algebraica la estructura de los gr\'aficos y los datos utilizados para generarlo.
-Este sistema est\'a enfocado en la presentaci\'on visual y la experiencia de usuario por lo que las reglas y heur\'isticas implementadas
-est\'an altamente influenciadas por los trabajos sobre dise\~no de visualizaciones y las m\'etricas utilizadas tienen como objetivo la expresividad de las visualizaciones. 
-
-Por otro lado \textbf{Voyager} \cite{wongsuphasawat2015voyager} se enfoca en recomendar visualizaciones que muestren transformaciones sobre los datos seleccionados mediante
-la utilizaci\'on de m\'etricas. Las configuraciones visuales son seleccionadas mediante la aplicaci\'on de reglas y heur\'isticas basadas en la literatura.   
-
-\subsection{Recomendaci\'on de Configuraciones Visuales Basada en Aprendizaje de M\'aquinas}
-
-Esta \'area ha comenzado a ser explorada recientemente con el desarrollo de \textbf{VizML} \cite{hu2019vizml}. Este sistema es el predecesor
-del enfoque propuesto por Quin y col. en la secci\'on \ref{subsection:ml-viz-rec} y modela este problema como una serie de problemas de
-clasificaci\'on multiclase sobre las configuraciones gr\'aficas de un lenguaje de visualizaci\'on. \textbf{KG4Vis} \cite{li2021kg4vis} utilizando
-como referencia el trabajo realizado en VizML desarroll\'o un sistema donde la selecci\'on de las configuraciones gr\'aficas en el lenguaje se realiza
-mediante la soluci\'on de problemas de \textit{link prediction} en un grafo de conocimientos.
 
 
 
