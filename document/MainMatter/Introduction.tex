@@ -4,9 +4,10 @@ Durante los a\~nos finales del siglo XX y principios del siglo XXI la
 r\'apida expansi\'on de Internet y la adopci\'on generalizada de las
 computadoras personales ha provocado que una gran variedad de datos sea
 producida en un volumen y velocidad cada vez mayores. Este fen\'omeno
-denominado "Big Data" \cite{beyer2012importance} ha tenido un gran impacto en distintas \'areas de
+denominado ``Big Data'' \cite{beyer2012importance} ha tenido un gran impacto en distintas \'areas de
 la actividad humana permitiendo el desarrollo de soluciones adaptables a los
 requerimientos de diversos dominios de la ciencia y organizaciones industriales.
+
 Mediante el procesamiento de estas enormes colecciones de datos se
 obtiene informaci\'on actualizada y relevante que puede ser utilizada para
 formular nuevas hip\'otesis o transformarse en una ventaja competitiva permitiendo
@@ -23,8 +24,8 @@ siglo II AC con la aparici\'on de los primeros mapas y cartas de navegaci\'on ut
 para explorar el mundo. La invenci\'on de las computadoras provoc\'o un cambio enorme
 en las formas visuales de representar datos. En particular, el desarrollo de \textit{software} ha provocado
 un gran avance en la aplicaci\'on de la visualizaci\'on de datos, permitiendo a los usuarios
-manipular cantidades sustanciales de datos de una forma m\'as intuitiva y construir
-visualizaciones de un forma m\'as r\'apida y efectiva \cite{li2020overview}. 
+manipular cantidades sustanciales de datos de forma intuitiva y construir
+visualizaciones de una forma m\'as r\'apida y efectiva \cite{li2020overview}. 
 
 En la actualidad la visualizaci\'on de datos
 es usualmente asociada con la Ciencia de la Computaci\'on, por lo que la mayor\'ia
@@ -32,26 +33,29 @@ de sus definiciones se enfocan en la conexi\'on entre los datos y la t\'ecnolog\
 computacional que los representa visualmente 
 [\cite*{card1999readings}, \cite*{friendly2001milestones}, \cite*{manovich2010visualization}, \cite*{kirk2012data}].
 En la presente investigaci\'on se utilizar\'a la definici\'on provista por
-Bikakis \cite{bikakis2018big} donde se plantea que 
-    \textit{"La visualizaci\'on de datos es la representación de datos en un
+Bikakis \cite{bikakis2018big} donde se plantea lo siguiente:\\
+\begin{quotation}
+    \textit{``La visualizaci\'on de datos es la representación de datos en un
     formato pictórico o gráfico, y una herramienta de visualización de
     datos es el software que genera esta representación. La visualización
     de datos proporciona a los usuarios un medio intuitivo para identificar patrones
     interesantes, inferir correlaciones y causalidades de manera efectiva,
-    respaldando el proceso de toma de decisiones."}
+    respaldando el proceso de toma de decisiones.''}
+\end{quotation}
+
 
 \section*{Motivaci\'on}
 
 El dise\~no de visualizaciones puede resultar ser un proceso complejo 
 donde se deben de tener en consideraci\'on m\'ultiples factores. 
-En la literatura se encuentran varios trabajos los cuales hacen hincapi\'e en la importancia
-de elementos del dise\~no gr\'afico (tama\~no, color, tipo de marca, etc...),
+En la literatura se encuentran varios trabajos los cuales se\~nalan la importancia
+de los elementos del dise\~no gr\'afico,
 de los objetivos o la tarea a realizar dentro del an\'alisis, e incluso, de las
 preferencias personales de los usuarios \cite{zeng2021we}.
 
 En la actualidad la visualizaci\'on de datos es uno de los m\'etodos
-anal\'iticos m\'as utilizados, sin embargo, requiere de especialistas
-del dominio con profundos conocimientos t\'ecnicos y supone un gasto
+anal\'iticos m\'as utilizados. Este requiere de especialistas
+del dominio con profundos conocimientos t\'ecnicos, suponiendo un gasto
 considerable de tiempo y esfuerzo humano debido al tama\~no y dimensi\'on
 de los conjuntos de datos y la ausencia de herramientas que faciliten un
 an\'alisis visual m\'as r\'apido [\cite*{chen2012business}, \cite*{vartak2017towards}].
@@ -71,11 +75,11 @@ investigaci\'on, surgiendo varios prototipos con nuevos enfoques que intentaban 
 el problema de forma total o parcial 
 [\cite*{luo2018deepeye}, \cite*{moritz2018draco}, \cite*{dibia2019data2vis}, \cite*{hu2019vizml}, \cite*{li2021kg4vis}, \cite*{harris2021insight}].
 Uno de los subproblemas que han intentando resolver varios sistemas es el problema
-de recomendaci\'on de configuraciones gr\'aficas, utilizando enfoques
+de recomendaci\'on de configuraciones gr\'aficas, utiliz\'andose enfoques
 basados en reglas y enfoques basados en aprendizaje de m\'aquinas (ML por sus siglas en ingl\'es) \cite{zeng2021we}. 
-Este u\'ltimo tipo de enfoque ha surgido recientemente por lo que existen pocos trabajos al
+Este u\'ltimo enfoque ha surgido recientemente por lo que existen pocos trabajos al
 respecto y no se han explorado todas las diversas t\'ecnicas de modelaci\'on de problemas
-de aprendizaje de m\'aquinas aplicadas al contexto de la recomendaci\'on de visualizaciones.
+de aprendizaje de m\'aquinas aplicadas al contexto de la recomendaci\'on de configuraciones gr\'aficas.
 
 
 \section*{Antecedentes}
@@ -84,12 +88,12 @@ investigadores del grupo de Inteligencia Artificial han desarrollado una l\'inea
 de investigaci\'on centrada en la visualizaci\'on autom\'atica de datos.
 
 Dentro de esta l\'inea de investigaci\'on surge el sistema \textbf{Learning Engine
-Through Ontologies} (LETO), un marco de trabajo para el descubrimiento
+Through Ontologies} (LETO) \cite{estevez2019demo}, un marco de trabajo para el descubrimiento
 de informaci\'on relevante a partir de datos estructurados y no estructurados. Este
 sistema permite generar conocimiento mediante la creaci\'on y composici\'on de ontolog\'ias 
-representadas mediante grafos de conocimientos \cite{estevez2019demo}. Una de las l\'ineas
-de trabajo futuro propuestas por los autores del sistema fue la realizaci\'on 
-de investigaciones sobre la utilizaci\'on de t\'ecnicas
+representadas utilizando grafos de conocimientos. Una de las l\'ineas
+de trabajo futuro sugerida por los autores del sistema fue la
+investigaci\'on sobre la utilizaci\'on de t\'ecnicas
 de aprendizaje de m\'aquinas para la generaci\'on de configuraciones visuales, ya que
 este sistema utilizaba reglas para la soluci\'on este problema.
 
@@ -105,18 +109,17 @@ un enfoque basado en reglas para resolver el problema de recomendaci\'on
 de configuraciones gr\'aficas (Cap\'itulo \ref{chapter:state-of-the-art}).
 Este tipo de enfoques son dif\'iciles de implementar y extender debido
 a que para definir reglas se necesita de expertos que las
-definan manualmente y en sistemas complejos esto puede resultar en largos
-tiempos de desarrollo. 
+definan manualmente, resultando en largos tiempos de desarrollo para sistemas complejos.
 
 El aprendizaje de m\'aquinas es un nuevo enfoque que ha surgido
 recientemente por lo que existen muy pocos trabajos al respecto. 
 En particular,
 el aprendizaje de m\'aquinas sobre grafos solo ha sido utilizado por un
-sistema (Cap\'itulo \ref{chapter:state-of-the-art}). 
+sistema. 
 Los grafos son estructuras que permiten la modelaci\'on
 de problemas complejos y los
 sistemas de recomendaci\'on basados en aprendizaje de m\'aquinas
-sobre grafos han sido extensamente utilizados en otros problemas con buenos resultados \cite{guo2020survey}.
+sobre grafos han sido extensamente utilizados en varios tipos de problemas con buenos resultados \cite{guo2020survey}.
 Debido a esto se considera necesario profundizar en la viabilidad de la utilizaci\'on
 de este tipo de sistemas para la recomendaci\'on de configuraciones gr\'aficas.
 \section*{Objetivos}
@@ -128,15 +131,14 @@ sobre grafos.
 
 \subsubsection{Objetivos espec\'ificos}
 \begin{enumerate}
-   \item Estudiar diferentes sistemas de recomendaci\'on de visualizaciones y configuraciones
+   \item Estudiar diferentes sistemas de recomendaci\'on de configuraciones
    gr\'aficas as\'i como sus enfoques para resolver la problem\'atica presentada.
     
     \item Definir formalmente el problema de generaci\'on de configuraciones
     gr\'aficas como un problema de aprendizaje de m\'aquinas sobre grafos.
 
-    \item Dise\~nar y desarrollar un prototipo de sistema que permita generar configuraciones
-    visuales a partir de un conjunto de datos preseleccionado y presentar dichos datos
-    mediante visualizaciones.
+    \item Dise\~nar y desarrollar un prototipo de sistema basado en aprendizaje de m\'aquinas sobre grafos que permita generar configuraciones
+    gr\'aficas a partir de un conjunto de datos preseleccionado.
 
     \item Evaluar la propuesta presentada y compararla con otros sistemas de
     recomendaci\'on de configuraciones gr\'aficas.
