@@ -20,7 +20,7 @@ resto del cap\'itulo y en la secci\'on \ref{section:graph-framework} se proponen
 diferentes formas de modelaci\'on del problema. 
 
 
-\section{Marco Te\'orico-Conceptual}\label{section:theoretical-framework}
+\section{Marco te\'orico-conceptual}\label{section:theoretical-framework}
 
 En esta secci\'on se definen los conceptos principales de la teor\'ia de grafos
 y se presentan las nociones b\'asicas del campo de aprendizaje de m\'aquinas
@@ -39,18 +39,6 @@ a\~no 1736 denominado grafo \cite{estrada2012structure}.
     asociado con una funci\'on de tipado de v\'ertices $f_v: V \to \mathcal{T}^v$ y 
     una funci\'on de tipado de aristas $f_e : E \to \mathcal{T}^e$. 
 \end{definition}
-
-% \begin{definition}
-%     Un \textbf{grafo ponderado} es un grafo $G = (V,E)$ tal que existe una funci\'on
-%     $w : E \to \mathbb{R}$ la cual para todo par de v\'ertices $v_i, v_j \in V$  asigna un
-%     peso $w_{ij}$.
-% \end{definition}
-
-% \begin{definition}
-%     Un \textbf{grafo homog\'eneo} $G_{homo}$ es un grafo tal 
-%     que $|\mathcal{T}^v| = |\mathcal{T}^e| = 1$. Todos los v\'ertices pertenecen
-%     a un mismo tipo y todas las aristas pertenecen a un mismo tipo.
-% \end{definition}
 
 \begin{definition}
     Un \textbf{grafo heterog\'eneo} $G_{hete}$ es un grafo tal 
@@ -128,7 +116,7 @@ se basa en la soluci\'on del problema de \textit{graph embedding} mediante el ap
 de funciones que permiten transformar v\'ertices, subgrafos o grafos enteros en
 vectores del espacio $\mathbb{R}^K$. Este enfoque es
 llamado \textit{Graph Representation Learning} (GRL) y ha permitido que
-los grafos sean utilizados por m\'etodos tradicionales de aprendizaje de m\'aquinas.
+los grafos sean utilizados por m\'etodos tradicionales de aprendizaje de m\'aquinas \cite{hamilton2017representation}.
 
 
 \section{Modelaci\'on de la recomendaci\'on de configuraciones visuales mediante grafos}\label{section:graph-framework}
@@ -180,8 +168,8 @@ datos usualmente empleado para representar conjuntos de datos estructurados es e
 
 La representaci\'on de conjuntos de datos en este marco de trabajo est\'a basada en dicho modelo permitiendo su
 desarrollo sobre sistemas de bases de datos relacionales o sistemas de recomendaci\'on de visualizaciones que representen
-la informaci\'on de forma relacional. Por tanto un conjunto de datos es una \textit{relaci\'on} cuya
-representaci\'on visual es una tabla de filas y columnas.
+la informaci\'on de forma relacional. Por tanto un conjunto de datos es una \textit{relaci\'on} la cual puede representarse visualmente
+como una tabla de filas y columnas.
 
 En la actualidad el an\'alisis de datos es aplicado a numerosas
 ramas del conocimiento humano por lo
@@ -193,16 +181,19 @@ Tomando en cuenta este problema se decidi\'o representar los conjuntos de datos
 mediante la transformaci\'on de sus atributos a un espacio com\'un de dimensi\'on $K$.
 
 \begin{definition}
-    Se denota por $\sigma$  la funci\'on que realiza una transformaci\'on
-    de un atributo $A$ de dominio arbitrario (y perteneciente a una relaci\'on
-    arbitraria) a un espacio de dimensi\'on $K$.
+    Se denota por $\mathcal{F}$ una familia de $K$ funciones que permiten transformar
+    una atributo $A$ de dominio arbitrario (y perteneciente a una relaci\'on
+    arbitraria) a un dominio $D$ de elementos at\'omicos.
+    La representaci\'on de una funci\'on de esta familia ser\'ia
     $$
-        \sigma : A \to \mathbb{R}^K
+        f : \mathbb{A} \to \mathbb{D}
     $$
+    Donde $\mathbb{A}$ es el universo de atributos y $\mathbb{D}$ es el conjunto de posibles dominios.
 \end{definition}
 
-Esto permite representar un conjunto de datos $D$ de atributos $A_1, A_2, ..., A_n$ como un
-conjunto de vectores $\{\sigma(A_1), \sigma(A_2), ..., \sigma(A_n)\}$ de dimensi\'on $K$.
+Esto permite representar a un atributo $A$ como un vector de $K$ dimensiones \\$ <f_1(A), f_2(A), ..., f_K(A)>$, denotando dicho vector
+por $\mathcal{F}(A)$ se puede extender este enfoque para un conjuntos de datos $S$ utilizando un conjunto de vectores \\
+$\{ \mathcal{F}(A_1), \mathcal{F}(A_2), ..., \mathcal{F}(A_n)\}$.
 
 Luego se procede a construir un grafo heterog\'eneo $G = (V,E)$ tal que $V$ es la uni\'on
 de los distintos conjuntos de v\'ertices que representan las entidades del problema y $E$ es la uni\'on de los distintos
@@ -212,24 +203,24 @@ Se definieron los siguientes conjuntos de v\'ertices:
 \begin{itemize}
     \item Conjunto de conjunto de datos $V_D$: este conjunto representa los conjuntos de datos.
     \item Conjunto de atributos $V_A$: este conjunto representa los atributos del conjunto de datos.
-    \item Conjunto de propiedades $V_F$: este conjunto representa cada una de las $K$ dimensiones en las cuales son representados los atributos de los conjuntos de datos.
+    \item Conjunto de propiedades $V_F$: este conjunto representan los valores obtenidos al aplicar las funciones de $\mathcal{F}$ sobre los atributos del conjunto de datos. 
 \end{itemize}
 
 Se definieron las siguientes relaciones dadas por conjuntos de aristas:
 \begin{itemize}
     \item \textit{Pertenecer} $E_{AD}$: este conjunto de aristas representa la relaci\'on de pertenencia entre un atributo y un conjunto de datos.
-    \item \textit{Caracterizar} $E_{AF}$: este conjunto de aristas representa la relaci\'on de caracterizaci\'on entre una dimensi\'on del espacio de representaci\'on y los atributos.
-\end{itemize}
+    \item \textit{Caracterizar} $E_{AF}$: este conjunto de aristas representa la relaci\'on de caracterizaci\'on entre los valores computados por las funciones de $\mathcal{F}$ y los atributos.\\\\\\
+\end{itemize} 
 
-\centering{
 \begin{center}
     \begin{figure}[h!]
-        \includegraphics[width=90mm, height=50mm]{Graphics/basic_graph.png}
+        \centering
+        \includegraphics[width=130mm, height=70mm]{Graphics/new_graph.png}
         \caption{Estructura de grafo propuesta}
-        \label{fig: basic-graph}
+        \label{fig: graph-struct}
     \end{figure}
 \end{center}
-}
+
 
 
 \section{Tareas de aprendizaje de m\'aquinas}
@@ -265,20 +256,21 @@ etiquetas para el conjunto $V_D \setminus {V_D}_l$ de v\'ertices no etiquetados.
 
 \subsection{Problema de predicci\'on de aristas}
 
-Para este problema se modific\'o la arquitectura del grafo mostrada en la imagen \ref{fig: basic-graph}
+Para este problema se modific\'o la arquitectura del grafo mostrada por la Figura \ref{fig: graph-struct}
 a\~nadiendo el conjunto de v\'ertices $V_C$ el cual representa las posibles opciones de una configuraci\'on $C_i$ y
 el conjunto de aristas $E_{AC}$ las cuales representan la utilizaci\'on una opci\'on para codificar un atributo.
 
 \begin{figure}[h!]
-    \includegraphics[width=85mm, height=65mm]{Graphics/link_pred_graph.png}
-    \caption{Estructura de grafo propuesta para el problema de predicci\'on de aristas}
+    \centering
+    \includegraphics[width=130mm, height=65mm]{Graphics/new_link_pred.png}
+    \caption{Estructura de grafo propuesta para el problema de predicci\'on de aristas (Se omiti\'o el resto del grafo por simplicidad).}
     \label{fig: link-pred-graph}
 \end{figure}
 
 Sean un grafo $G = (V,E)$ con $V = V_D \cup V_A \cup V_F \cup V_C$ y $E = E_{DA} \cup E_{AF} \cup E_{AC}$,
 una configuraci\'on gr\'afica $C$ y $E_{AC}^*$ el conjunto de todas las posibles aristas entre los conjuntos de v\'ertices $V_A$ y $V_C$.
 El objetivo es aproximar una funci\'on de probabilidad $p : E_{AC}^* \to [0,1]$ la cual indique la probabilidad de que una arista
-entre un elemento $V_A$ y un elemento de $V_C$ pertenezca al grafo.
+entre un elemento $V_A$ y un elemento de $V_C$ pertenezca al grafo.\\\\\\
 
 \subsection{Problema de clasificaci\'on de grafos}
 
@@ -290,88 +282,193 @@ $\mathbb{G}$ es el espacio de todos los posibles grafos.
 
 
 
-\chapter{Propuesta}\label{chapter:proposal}
+\chapter{MLG4Vis}\label{chapter:proposal}
 
-El enfoque utilizado en este trabajo 
+En la actualidad los analistas de datos realizan su trabajo
+sobre conjuntos de datos de gran tama\~no y dimensi\'on por lo que
+necesitan de herramientas computacionales que apoyen y faciliten
+su trabajo en la toma de decisiones, sobre todo cuando tratan con una
+cantidad de informaci\'on considerable.
 
-\section{M\'odulos del sistema}
+En esta secci\'on se describe un prototipo de sistema de recomendaci\'on de
+configuraciones gr\'aficas basado en el marco de trabajo definido
+en el Cap\'itulo \ref{chapter:ml-on-graphs}, con el objetivo de que pueda ser utilizado
+por plataformas de an\'alisis de datos, sea dentro de un an\'alisis manual o 
+automatizado.\\
 
-El proceso comienza con la obtenci\'on de un conjunto de datos
-ya existente del cual se quieren recomendar las configuraciones
-gr\'aficas para visualizarlo. 
-
-Los atributos de este conjunto de datos son transformados en vectores de caracter\'isticas
-los cuales describen estos atributos mediante el c\'omputo de
-m\'etricas estad\'isticas.
-
-Luego los valores de las componentes de estos vectores son
-discretizados y transformados en un grafo de conocimiento. Este
-grafo es bipartito donde un conjunto de v\'ertices representa
-los atributos del conjunto de datos y el otro conjunto representa
-los posibles valores de las m\'etricas estad\'isticas utilizadas para
-describirlos.
-
-Luego este grafo es utilizado como la entrada de una red neuronal
-artificial encargada de predecir la clase a la cual pertenencen los
-v\'ertices del conjunto asociado a los atributos.
-
-Definiendo una funci\'on de mapeo entre el espacio de clases existentes en este problema 
-de clasificaci\'on y los posibles valores de las configuraciones gr\'aficas
-disponibles se obtiene un sistema capaz de seleccionar de forma autom\'atica
-configuraciones gr\'aficas para conjuntos de datos.
-
+\section{Concepci\'on y dise\~no del sistema}
 
 \begin{figure}[h!]
-    \includegraphics[width=\linewidth]{Graphics/simple_pipeline.png}
-    \caption{Flujo de datos de la soluci\'on propuesta}
-    \label{fig: flow_chart_sol}
+    \includegraphics[width=\linewidth]{Graphics/mlg4vis.png}
+    \caption{Utilizaci\'on de MLG4Vis en el an\'alisis de datos}
+    \label{fig: mlg4vis}
 \end{figure}
 
 
+\textit{Machine Learning on Graphs For Visualization} (GML4Vis) se concibe como un
+sistema el cual pueda ser utilizado dentro de plataformas de an\'alisis de datos. Estas plataformas
+deben permitir una especificaci\'on parcial de las visualizaciones, pudiendo el
+usuario definir la informaci\'on a ser visualizada u obtener esta mediante sistemas
+automatizados como LETO (Figura \ref{fig: mlg4vis}).
+
+GML4Vis est\'a dividido en 4 m\'odulos interrelacionados que
+constituyen la implementaci\'on del enfoque propuesto en el Cap\'itulo \ref{chapter:ml-on-graphs}.
+Cada m\'odulo
+tiene una responsabilidad espec\'ifica mediante la definici\'on de datos
+de entrada y salida que definen la intercomunicaci\'on con el resto de los
+m\'odulos. La Figura \ref{fig: mlg4vis-arch} permite tener una
+visi\'on de la arquitectura del sistema.
+
+\begin{figure}[h!]
+    \includegraphics[width=\linewidth]{Graphics/pipeline.png}
+    \caption{Arquitectura de GML4Vis}
+    \label{fig: mlg4vis-arch}
+\end{figure}
+
+Como se puede apreciar en la Figura \ref{fig: mlg4vis-arch} los
+4 m\'odulos est\'an dispuestos de forma secuencial modelando
+la transformaci\'on de un conjunto de datos en recomendaciones.
+
+\begin{itemize}
+    \item La entrada del sistema la constituye un conjunto de datos estructurados.
+    \item El \textbf{M\'odulo de extracci\'on de caracter\'isticas} computa una serie
+    de m\'etricas que permiten describir el conjunto de datos como un conjunto de vectores de caracter\'isticas.
+    \item El \textbf{M\'odulo de construcci\'on de grafos} realiza un proceso de discretizaci\'on
+    sobre las caracter\'isticas continuas de los vectores y procede a construir los grafos propuestos
+    en el Cap\'itulo \ref{chapter:ml-on-graphs}.
+    \item El \textbf{M\'odulo de aprendizaje profundo} este m\'odulo implementa los modelos
+    de redes neuronales que seleccionan las configuraciones gr\'aficas mediante la resoluci\'on
+    de las tareas propuestas en el Cap\'itulo \ref{chapter:ml-on-graphs}.
+    \item El \textbf{M\'odulo de recomendaci\'on} se encarga de construir las visualizaciones
+    utilizando las configuraciones seleccionadas por las redes neuronales y realiza un \textit{ranking}
+    de las visualizaciones.
+    \item El \textit{ranking} de visualizaciones obtenido se retorna como salida del sistema en forma de
+    recomendaciones.
+\end{itemize}
+
+En las secciones a continuaci\'on se expone de forma general el funcionamiento de los distintos m\'odulos
+del sistema y las principales consideraciones tomadas durante su dise\~no.
+
 \subsection{M\'odulo de extraci\'on de caracter\'isticas}
 
-El primer paso se encarga de transformar la entrada del sistema a un
-espacio com\'un de $K$ dimensiones. Este proceso se realiza con el
-objetivo reducir la heterogeneidad de los datos de entrada que utiliza
-el modelo, debido a que los posibles conjuntos de datos a analizar
-pueden provenir de distintos dominios del conocimiento humano (Medicina, Econom\'ia, etc...) \cite{vartak2017towards}.
+Este m\'odulo se encarga de transformar el conjunto de datos de entrada a un
+espacio com\'un de vectores de $K$ dimensiones mediante el c\'omputo de m\'etricas. 
 
-La reducci\'on de dimensi\'on de un conjunto de datos se realiza mediante
-la caracterizaci\'on de sus atributos. En este trabajo se decidi\'o caracterizar
-los atributos mediante el uso de m\'etricas estad\'isticas el cual ha sido
-un enfoque ampliamente usado en la literatura \cite{key2012vizdeck} \cite{vartak2014seedb} \cite{demiralp2017foresight} \cite{qian2020ml}.
+Antes de realizar el c\'alculo de las m\'etricas se realizan dos pasos de preprocesamiento.
+Primeramente se realiza (de ser necesario) una inferencia del tipo de los atributos del conjunto de datos ya que existen
+varios formatos de almacenamiento de datos (p.e. valores separados por comas) que no almacenan los metadatos
+respectivos al dominio de los atributos. Luego se aborda un problema com\'un dentro del an\'alisis de datos que
+es la existencia de datos faltantes \cite{schafer2002missing}. Este problema ha sido extensamente estudiado en la
+rama de la Estad\'istica debido a que puede comprometer la calidad de las mediciones estad\'isticas obtenidas, para
+resolver este problema se utilizaron t\'ecnicas de imputaci\'on de datos \cite{jadhav2019comparison}.
 
-Tambi\'en se toman en especial consideraci\'on problemas comunes
-enmarcados dentro del an\'alisis de datos como la existencia de datos faltantes \cite{schafer2002missing}
-y el soporte para distintos tipos de datos. Para ello se realiza un preprocesamiento
-antes de calcular los estad\'isticos en el cual se realiza la inferencia de los tipos de datos utilizados
-y la imputaci\'on de datos faltantes.
+Terminado el preprocesamiento se procede a realizar el c\'alculo de una serie de medidas. La mayor\'ia
+de estas medidas provienen del campo de la Estad\'istica y fueron seleccionadas de acuerdo a su robustez
+ante la diferencia de magnitudes que pueden existir en los distintos conjuntos de datos.
 
 \subsection{M\'odulo de construcci\'on de grafos}
 
-Despu\'es de obtener un conjunto de vectores de caracter\'isticas se realiza un proceso
-de discretizaci\'on de las componentes de los vectores, esto tiene como objetivo aumentar
-la densidad del espacio sobre el que se definen los atributos de los conjuntos de datos haciendo que 
-el grafo resultante sea m\'as denso.
+Previo a la construcci\'on del grafo se realiza un proceso
+de discretizaci\'on de las componentes de los vectores, con el de objetivo reducir
+la cantidad de v\'ertices del grafo que surgen como la representaci\'on de valores en un dominio continuo.
 Cada componente es discretizada mediante la creaci\'on de intervalos que particionan el
-rango de valores que puede tomar dicha componente. Para discretizar los
-valores se utiliz\'o el algoritmo MDLP \cite{fayyad1993multi} el cual puede
+rango de valores que puede tomar. Para este proceso
+se utiliz\'o el algoritmo MDLP \cite{fayyad1993multi} el cual puede
 inferir la cantidad de intervalos en que deben ser particionados los valores
-bas\'andose en la distribuci\'on de los datos. Este algoritmo fue utilizado con
-\'exito para esta tarea en \cite{li2021kg4vis}.
+bas\'andose en la distribuci\'on de los datos.
 
-Luego se procede a construir el grafo de conocimiento, para ello se definen los conjuntos
-de entidades $V_A$ que representa los atributos y $V_F$ el cual representa los posibles
-rangos de valores para las distintas caracter\'isticas de los vectores. La relaci\'on entre
-estos conjuntos se establece con el conjunto de aristas $E_{AF}$. Finalmente se
-obtiene el grafo bipartito $G = (V_A \cup V_F, E_{AF})$.
+Luego se procede a construir los grafos de acuerdo a las estructuras propuestas en el Cap\'itulo \ref{chapter:ml-on-graphs}.
 
-En la literatura existen representaciones alternativas luego de la discretizaci\'on. \cite{qian2020ml} 
-utiliza \textit{One Hot encoding} para representar la pertenencia
-a intervalos de cada una de las m\'etricas de los atributos. Sin embargo, esto provoc\'o un 
-aumento de la dimensi\'on de los vectores de caracter\'isticas lo cual conllev\'o
-a emplear redes neuronales de mayores recursos.
+\subsection{M\'odulo de aprendizaje profundo}
 
-\subsection{M\'odulo de modelos GRL}
+Luego de obtenidos los grafos que modelan los conjuntos de datos se procede
+a dise\~nar modelos que resuelvan las tareas de aprendizaje de m\'aquinas definidas en el Cap\'itulo \ref{chapter:ml-on-graphs}.
 
-\subsection{M\'odulo de generaci\'on de visualizaciones}
+En este trabajo se utilizan modelos basados en \textit{Graph Representation Learning} (Secci\'on \ref{section:theoretical-framework}) debido
+a dos motivos principales:
+
+\begin{itemize}
+    \item Los enfoques tradicionales al aprendizaje de m\'aquinas sobre grafos son
+    basados principalmente en el c\'alculo de m\'etricas o propiedades del grafo. Esto
+    hace que los resultados de dichos m\'etodos sean muy sensibles a datos no observados
+    durante el entrenamiento. Debido a que los analistas trabajan con nuevos conjuntos de datos
+    de forma constante es importante utilizar modelos que puedan presentar buenos resultados con datos no observados.
+    \item Los enfoques basados en GRL son muy parecidos
+    a los utilizados en el aprendizaje de m\'aquinas tradicional, lo que coincide con el
+    \'area de investigaci\'on de los tutores de este trabajo.
+\end{itemize}
+
+Dentro de GRL existen m\'ultiples algoritmos para solucionar las tareas propuestas [\cite*{hamilton2017representation}, \cite*{chami2022machine},  \cite*{cai2018comprehensive}, \cite*{nickel2015review}], por lo que a continuaci\'on se presentan
+los criterios utilizados en la selecci\'on de algoritmos para este escenario.
+
+\begin{itemize}
+    \item El algoritmo debe de poder utilizarse sobre grafos heterog\'eneos con v\'ertices y aristas de distintos tipos.
+    \item El algoritmo debe ser robusto ante la presencia de datos no observados.
+    \item El algoritmo debe de ser eficiente computacionalmente.
+\end{itemize}
+
+El algoritmo seleccionado fue Heterogeneous GraphSAGE (HinSAGE) \cite{hinsage}, una generalizaci\'on del
+algoritmo GraphSAGE \cite{hamilton2017inductive} para grafos heterog\'eneos. HinSAGE es un algoritmo \textit{inductivo}
+para solucionar el problema de \textit{graph embedding} (Cap\'itulo \ref{section:theoretical-framework}) que ha sido
+utilizado en m\'ultiples problemas de aprendizaje de m\'aquinas sobre grafos en los \'ultimos a\~nos
+[ \cite*{racchi2021fraud}, \cite*{yacoumatos2021trialgraph}, \cite*{cho2022heterogeneous}, \cite*{van2022inductive}].
+Utilizando redes neuronales aprende una funci\'on que
+genera \textit{embeddings} de los v\'ertices del grafo y este enfoque inductivo le permite transformar v\'ertices
+no observados durante el entrenamiento. En cuanto a la eficiencia al estar
+basado en redes neuronales es eficiente computacionalmente pero costoso espacialmente.
+
+% A partir de la investigaci\'on se desarrollaron dos modelos distintos:
+
+% \begin{itemize}
+%     \item El primer modelo est\'a enfocado a la soluci\'on de las tareas de clasificaci\'on de v\'ertices y clasificaci\'on de grafos.
+%     Este modelo utiliza la estrategia \textit{One vs All} para las tareas de clasificaci\'on multiclase, esta se
+%     basa en construir un clasificador por cada clase y entrenarlo en un problema de clasificaci\'on binario de \textit{pertenece o no a la clase}.
+%     Luego para seleccionar una clase todos los modelos entrenados emiten un voto y la clase m\'as votada es la elegida como correcta.
+%     La utilizaci\'on de este enfoque en lugar de utilizar una \'unica red neuronal se debe a la necesidad de obtener una medida de la ``confianza''
+%     del clasificador en su decisi\'on para poder realizar un \textit{r\'anking}. Esta confianza puede ser modelada como la cantidad de votos
+%     recibidos entre la cantidad de votos totales.
+%     \item El segundo modelo est\'a enfocado en la soluci\'on de la tarea de predicci\'on de aristas, dado que el objetivo de este problema es obtener una probabilidad
+%     para cada arista se pudo utilizar una \'unica red neuronal.
+% \end{itemize}
+
+La estructura neuronal propuesta para 
+
+\subsection{M\'odulo de recomendaci\'on}
+
+Utilizando las distribuciones de probabilidades generadas por las redes neuronales es posible realizar
+recomendaciones modelando la selecci\'on de opciones como un conjunto de sucesos independientes.
+
+Consid\'erese una lista de configuraciones visuales $C_1, C_2, ..., C_n$ y las distribuciones de probabilidades 
+$p_1, p_2, ..., p_n$ computadas por los modelos GRL tal que $p_i$ es la distribuci\'on de probabilidades
+de la configuraci\'on $C_i$.
+La probabilidad de una visualizaci\'on $g = <c_1, c_2, ..., c_n> \in C_1 \times C_2 \times ... \times C_n$
+se define como $p(g) = p_1(c_1) \cdot p_2(c_2) \cdot ... \cdot p_n(c_n)$.
+Con esta definici\'on se garantiza que las visualizaciones en los primeros puestos del \textit{ranking} 
+est\'en construidas utilizando solamente opciones de alta probabilidad 
+de ocurrencia ya que $\exists \; c_i : p(c_i) \to 0 \implies p(g) \to 0$.
+
+
+\section{Corpus}
+
+Para poder implementar este sistema, y en general
+para todos los algoritmos de aprendizaje supervisado, se hace necesario contar con datos previamente clasificados.
+En el contexto de la generaci\'on de configuraciones visuales esos datos ser\'ian conjuntos
+de datos con su respectiva visualizaci\'on asociada. Para extraer las configuraciones gr\'aficas 
+estas visualizaciones deben de estar especificadas en lenguajes de visualizaci\'on de datos u otros lenguajes
+de intercambio de datos como JSON \cite{pezoa2016foundations}.
+
+A pesar de la relevancia de las funciones de recomendaci\'on dentro
+de las herramientas de an\'alisis de datos el progreso en esta l\'inea
+de investigaci\'on es lastrado por la inexistencia de grandes corpus p\'ublicos.
+Repositorios como WordNet \cite{wordnet1998} y IMDB Reviews \cite{maas-EtAl:2011:ACL-HLT2011} han jugado un papel importante en el desarrollo actual
+del procesamiento de lenguaje natural, sin embargo, no existen repositorios similares para
+los problemas enmarcados en la visualizaci\'on autom\'atica de datos.
+
+Al momento de realizarse la presente investigaci\'on los corpus existentes
+han sido creados durante el desarrollo de sistemas basados en el aprendizaje de m\'aquinas (Cap\'itulo \ref{chapter:state-of-the-art}).
+Data2Vis cre\'o un corpus mediante la utilizaci\'on del sistema basado en reglas Voyager. Draco-Learn y DeepEye encargaron
+la construcci\'on del corpus a un conjunto de expertos en visualizaci\'on de datos. Finalmente VizML construy\'o el primer corpus
+de gran tama\~no mediante la recolecci\'on de visualizaciones publicadas en la plataforma Plotly \cite{plotly}. Debido a la gran cantidad
+de datos necesitada para el entrenamiento y validaci\'on de modelos de redes neuronales se opt\'o por utilizar el corpus de Plotly para el desarrollo de
+este trabajo. 
+
