@@ -1,38 +1,40 @@
 \chapter*{Introducción}\label{chapter:introduction}
 
-Durante los a\~nos finales del siglo XX y principios del siglo XXI la
+Desde los a\~nos finales del siglo XX, la
 r\'apida expansi\'on de Internet y la adopci\'on generalizada de las
 computadoras personales ha provocado que una gran variedad de datos sea
 producida en un volumen y velocidad cada vez mayores. Este fen\'omeno
 denominado ``Big Data'' \cite{beyer2012importance} ha tenido un gran impacto en distintas \'areas de
-la actividad humana permitiendo el desarrollo de soluciones adaptables a los
+la actividad humana, permitiendo el desarrollo de soluciones adaptables a los
 requerimientos de diversos dominios de la ciencia y organizaciones industriales.
 
 Mediante el procesamiento de estas enormes colecciones de datos se
-obtiene informaci\'on actualizada y relevante que puede ser utilizada para
-formular nuevas hip\'otesis o transformarse en una ventaja competitiva permitiendo
-una toma de decisiones m\'as r\'apida y segura \cite{de2016formal}. Debido a los beneficios potenciales
-que presenta el Big Data ha sido necesario el surgimiento y evoluci\'on de
-tecnolog\'ias y procesos que permitan su utilizaci\'on, siendo el an\'alisis
-de datos de los procesos m\'as relevantes dentro de este ecosistema.
+obtiene informaci\'on, actualizada y relevante, que puede ser utilizada para
+formular nuevas hip\'otesis o transformarse en una ventaja competitiva, permitiendo
+una toma de decisiones m\'as r\'apida y segura \cite{de2016formal}. Los beneficios
+potenciales del Big Data han propiciado el surgimiento y desarrollo de tecnolog\'ias
+y procesos que permitan su utilizaci\'on, siendo el an\'alisis de datos de los procesos
+m\'as relevantes dentro de este ecosistema.
 
 Dentro del an\'alisis de datos existen m\'ultiples enfoques y m\'etodos, resultando
-de particular inter\'es para este trabajo la visualizaci\'on de datos. Esta rama se enmarca
-dentro del campo de la Estad\'istica como parte del an\'alisis exploratorio de datos.
+de particular inter\'es para este trabajo la visualizaci\'on de datos. La capacidad
+de las representaciones visuales de presentar informaci\'on, de forma intuitiva para su
+f\'acil comprensi\'on y an\'alisis, ha llevado al auge de esta rama en los campos
+de la Estad\'istica y la Comunicaci\'on.
+
 El t\'ermino visualizaci\'on de datos tiene una larga historia que se remonta al
-siglo II AC con la aparici\'on de los primeros mapas y cartas de navegaci\'on utilizadas
-para explorar el mundo. La invenci\'on de las computadoras provoc\'o un cambio enorme
+siglo II AC con la aparici\'on de los primeros mapas y cartas de navegaci\'on. La invenci\'on de las computadoras provoc\'o un cambio enorme
 en las formas visuales de representar datos. En particular, el desarrollo de \textit{software} ha provocado
 un gran avance en la aplicaci\'on de la visualizaci\'on de datos, permitiendo a los usuarios
-manipular cantidades sustanciales de datos de forma intuitiva y construir
+manipular cantidades sustanciales de estos de forma intuitiva y construir
 visualizaciones de una forma m\'as r\'apida y efectiva \cite{li2020overview}. 
 
-En la actualidad la visualizaci\'on de datos
+En la actualidad, la visualizaci\'on de datos
 es usualmente asociada con la Ciencia de la Computaci\'on, por lo que la mayor\'ia
-de sus definiciones se enfocan en la conexi\'on entre los datos y la t\'ecnolog\'ia
+de sus definiciones se enfocan en la conexi\'on entre los datos y la tecnolog\'ia
 computacional que los representa visualmente 
 [\cite*{card1999readings}, \cite*{friendly2001milestones}, \cite*{manovich2010visualization}, \cite*{kirk2012data}].
-En la presente investigaci\'on se utilizar\'a la definici\'on provista por
+En la presente investigaci\'on se utilizar\'a la definici\'on dada por
 Bikakis \cite{bikakis2018big} donde se plantea lo siguiente:\\
 \begin{quotation}
     \textit{``La visualizaci\'on de datos es la representación de datos en un
@@ -46,39 +48,32 @@ Bikakis \cite{bikakis2018big} donde se plantea lo siguiente:\\
 
 \section*{Motivaci\'on}
 
-El dise\~no de visualizaciones puede resultar ser un proceso complejo 
-donde se deben de tener en consideraci\'on m\'ultiples factores. 
-En la literatura se encuentran varios trabajos los cuales se\~nalan la importancia
-de los elementos del dise\~no gr\'afico,
-de los objetivos o la tarea a realizar dentro del an\'alisis, e incluso, de las
-preferencias personales de los usuarios \cite{zeng2021we}.
 
-En la actualidad la visualizaci\'on de datos es uno de los m\'etodos
-anal\'iticos m\'as utilizados. Este requiere de especialistas
+La visualizaci\'on de datos es uno de los m\'etodos
+anal\'iticos m\'as utilizados hoy en d\'ia. Este requiere de especialistas
 del dominio con profundos conocimientos t\'ecnicos, suponiendo un gasto
 considerable de tiempo y esfuerzo humano debido al tama\~no y dimensi\'on
-de los conjuntos de datos y la ausencia de herramientas que faciliten un
+de los conjuntos de datos y a la ausencia de herramientas que faciliten un
 an\'alisis visual m\'as r\'apido [\cite*{chen2012business}, \cite*{vartak2017towards}].
 
-Dichas limitaciones han sido recogidas y analizadas por varios trabajos dentro de la
+Dichas limitaciones han sido recogidas y analizadas en varios trabajos dentro de la
 literatura [\cite*{zeng2021we}, \cite*{vartak2017towards}, \cite*{godfrey2016interactive}], 
 dando lugar a la definici\'on de caracter\'isticas, dificultades y 
 directrices del problema de visualizaci\'on autom\'atica de datos.
 Vartak y col. \cite{vartak2017towards} definieron los sistemas de recomendaci\'on
 de visualizaciones (VizRec) como respuesta a este problema. Estos sistemas tienen como
 objetivo construir y sugerir de forma autom\'atica visualizaciones que resalten
-patrones o tendencias de inter'es, permitiendo un an\'alisis visual m\'as r\'apido
+patrones o tendencias de inter\'es, permitiendo un an\'alisis visual m\'as r\'apido
 y efectivo.
 
 La publicaci\'on de este art\'iculo ha despertado un renovado inter\'es en esta \'area de
-investigaci\'on, surgiendo varios prototipos con nuevos enfoques que intentaban solucionar
+investigaci\'on, surgiendo varios prototipos con nuevos enfoques que intentan solucionar
 el problema de forma total o parcial 
 [\cite*{luo2018deepeye}, \cite*{moritz2018draco}, \cite*{dibia2019data2vis}, \cite*{hu2019vizml}, \cite*{li2021kg4vis}, \cite*{harris2021insight}].
-Uno de los subproblemas que han intentando resolver varios sistemas es el problema
-de recomendaci\'on de configuraciones gr\'aficas, utiliz\'andose enfoques
+Uno de los subproblemas que han intentado resolver varios sistemas es la recomendaci\'on de configuraciones gr\'aficas, utilizando enfoques
 basados en reglas y enfoques basados en aprendizaje de m\'aquinas (ML por sus siglas en ingl\'es) \cite{zeng2021we}. 
-Este u\'ltimo enfoque ha surgido recientemente por lo que existen pocos trabajos al
-respecto y no se han explorado todas las diversas t\'ecnicas de modelaci\'on de problemas
+Este \'ultimo enfoque ha surgido recientemente, por lo que existen pocos trabajos al
+respecto, y no se han explorado todas las diversas t\'ecnicas de modelaci\'on de problemas
 de aprendizaje de m\'aquinas aplicadas al contexto de la recomendaci\'on de configuraciones gr\'aficas.
 
 
@@ -95,55 +90,107 @@ representadas utilizando grafos de conocimientos. Una de las l\'ineas
 de trabajo futuro sugerida por los autores del sistema fue la
 investigaci\'on sobre la utilizaci\'on de t\'ecnicas
 de aprendizaje de m\'aquinas para la generaci\'on de configuraciones visuales, ya que
-este sistema utilizaba reglas para la soluci\'on este problema.
+dicho sistema utilizaba reglas para la soluci\'on de este problema.
 
 Esta investigaci\'on aborda la l\'inea propuesta, inspir\'andose en el trabajo realizado
 por el sistema desarrollado en la entidad, presentando una primera aproximaci\'on a la generaci\'on 
-de configuraciones gr\'aficas con la utilizaci\'on de t\'ecnicas de aprendizaje de profundo sobre grafos.
+de configuraciones gr\'aficas con la utilizaci\'on de t\'ecnicas de aprendizaje de m\'aquinas sobre grafos
+de conocimientos.
 
 
 \section*{Problem\'atica}
 
-Gran parte de los sistemas que conforman el estado del arte utilizan
-un enfoque basado en reglas para resolver el problema de recomendaci\'on
-de configuraciones gr\'aficas (Cap\'itulo \ref{chapter:state-of-the-art}).
-Este tipo de enfoques son dif\'iciles de implementar y extender debido
-a que para definir reglas se necesita de expertos que las
-definan manualmente, resultando en largos tiempos de desarrollo para sistemas complejos.
+El dise\~no de visualizaciones es un proceso complejo 
+donde se deben de tener en consideraci\'on m\'ultiples factores y no existe un
+consenso, incluso, entre los expertos del dominio.
 
-El aprendizaje de m\'aquinas es un nuevo enfoque que ha surgido
-recientemente por lo que existen muy pocos trabajos al respecto. 
-En particular,
-el aprendizaje de m\'aquinas sobre grafos solo ha sido utilizado por un
-sistema. 
-Los grafos son estructuras que permiten la modelaci\'on
-de problemas complejos y los
-sistemas de recomendaci\'on basados en aprendizaje de m\'aquinas
-sobre grafos han sido extensamente utilizados en varios tipos de problemas con buenos resultados \cite{guo2020survey}.
-Debido a esto se considera necesario profundizar en la viabilidad de la utilizaci\'on
-de este tipo de sistemas para la recomendaci\'on de configuraciones gr\'aficas.
+En la literatura se encuentran varios trabajos donde se se\~nala la importancia
+de los elementos del dise\~no gr\'afico,
+de los objetivos del an\'alisis, y de las
+preferencias personales de los usuarios en la construcci\'on de visualizaciones \cite{zeng2021we}. Adem\'as,
+se espera que los sistemas de recomendaci\'on de configuraciones
+gr\'aficas sugieran m\'ultiples visualizaciones, por lo que
+la calidad del conjunto de visualizaciones recomendado es tan
+importante como la calidad individual de sus elementos. Criterios
+como la diversidad de las recomendaciones y el cubrimiento
+del espacio de posibles visualizaciones han sido aspectos
+espec\'ificos de este problema destacados en la literatura \cite{hu2019vizml}.
+
+
+Debido a los motivos anteriores, la automatizaci\'on del proceso de recomendaci\'on de un gr\'afico, mediante
+la elecci\'on de configuraciones gr\'aficas determinadas, es una tarea compleja para
+la que a\'un no existe una soluci\'on universalmente aceptada.
+
+El aprendizaje de m\'aquinas es una disciplina que ha destacado en la
+resoluci\'on de tareas complejas, por lo que resulta de inter\'es
+el estudio y desarrollo de sistemas de recomendaci\'on de configuraciones
+gr\'aficas basados en t\'ecnicas de aprendizaje de m\'aquinas.
+
+
 \section*{Objetivos}
 
 \subsubsection{Objtivo general}
 Proponer y desarrollar un sistema de recomendaci\'on de configuraciones
-visuales basado en la utilizaci\'on de t\'ecnicas de aprendizaje profundo
-sobre grafos.
+visuales basado en aprendizaje de m\'aquinas.
 
 \subsubsection{Objetivos espec\'ificos}
 \begin{enumerate}
    \item Estudiar diferentes sistemas de recomendaci\'on de configuraciones
    gr\'aficas as\'i como sus enfoques para resolver la problem\'atica presentada.
     
-    \item Definir formalmente el problema de generaci\'on de configuraciones
-    gr\'aficas como un problema de aprendizaje de m\'aquinas sobre grafos.
+    \item Modelar formalmente el problema de recomendaci\'on de configuraciones
+    gr\'aficas.
 
-    \item Dise\~nar y desarrollar un prototipo de sistema basado en aprendizaje de m\'aquinas sobre grafos que permita generar configuraciones
+    \item Dise\~nar y desarrollar un prototipo de sistema que sugiera configuraciones
     gr\'aficas a partir de un conjunto de datos preseleccionado.
 
-    \item Evaluar la propuesta presentada y compararla con otros sistemas de
-    recomendaci\'on de configuraciones gr\'aficas.
+    \item Realizar experimentos que permitan evaluar la validez de la propuesta
+    concebida y establecer pautas para el desarrollo a seguir.
 
 \end{enumerate}
+
+\section*{Propuesta de soluci\'on}
+
+Como m\'etodo de soluci\'on se propone un
+sistema que modela el proceso de construcci\'on
+de una visualizaci\'on a trav\'es de la codificaci\'on
+individual de cada uno de los atributos del conjunto de datos. Los conjuntos
+de datos son representados mediante grafos que modelan
+las relaciones establecidas entre los atributos de los
+conjuntos y sus caracter\'isticas. Posteriormente,
+este grafo es utilizado como entrada de modelos
+de \textit{Graph Representation Learning} que calculan las probabilides
+de utilizar determinadas opciones gr\'aficas. Estas probabilidades
+son combinadas para calcular qu\'e tan probable es que un conjunto de
+datos sea representado por un gr\'afico determinado. Dicho valor
+es utilizado para comparar los elementos del espacio de posibles
+visualizaciones y realizar recomendaciones.
+
+
+\section*{Estructura del documento}
+
+El resto del documento se ha estructurado
+en cuatro cap\'itulos que abordan las distintas fases
+por las que transit\'o la presente investigaci\'on. En el cap\'itulo \ref{chapter:state-of-the-art} 
+se realiza un estudio sobre el estado del arte de la recomendaci\'on
+de configuraciones visuales, presentando varios conceptos y enfoques
+aplicados en cap\'itulos posteriores. El cap\'itulo \ref{chapter:ml-on-graphs}
+introduce un marco de trabajo para la modelaci\'on del problema de recomendaci\'on
+de configuraciones gr\'aficas como un problema de aprendizaje de m\'aquinas sobre grafos.
+El cap\'itulo \ref{chapter:proposal} presenta una propuesta de sistema de recomendaci\'on
+de configuraciones gr\'aficas utilizando los conceptos y problemas definidos en el cap\'itulo anterior.
+En el cap\'itulo \ref{chapter:implementation} se detallan los
+aspectos t\'ecnicos de la implementaci\'on de un prototipo del sistema y
+se realiza un an\'alisis de la validez de la soluci\'on implementada
+mediante el desarrollo de experimentos. Como parte del desenlace
+se presentan las conclusiones, que recogen los resultados
+obtenidos de acuerdo al cumplimiento de los objetivos propuestos, as\'i como 
+las recomendaciones, donde se proponen un conjunto de l\'ineas
+de investigaci\'on como parte de la continuaci\'on del presente trabajo.
+Finalmente, se presentan las referencias bibliogr\'aficas que sustentan
+la base cient\'ifica de la soluci\'on propuesta.
+
+
 
 
 

@@ -158,6 +158,7 @@
 \newcommand{\degree}[1]{\def\@degree{#1}}
 \newcommand{\faculty}[1]{\def\@faculty{#1}}
 \newcommand{\logo}[1]{\def\@logo{#1}}
+\newcommand{\qrcode}[1]{\def\@qrcode{#1}}
 
 \newenvironment{opinion}%
   {\chapter*{Opinión del tutor}}%
@@ -224,7 +225,7 @@
     \vfill
     {\large Trabajo de Diploma \\presentado en opción al título de \\ \@degree} \\
     \vskip 1cm
-    \@date
+    %\includegraphics[width=2.5cm]{\@qrlogo}\\
   \end{center}
 }
 
